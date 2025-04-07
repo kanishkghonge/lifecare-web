@@ -143,8 +143,6 @@ ul {
     top: 0;
     z-index: 1000;
     border-radius: 0 0 15px 15px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
 }
 
 .glass-header .container {
@@ -158,28 +156,12 @@ ul {
     align-items: center;
 }
 
-.logo-wrapper {
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    background-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .logo {
-    width: 95%;
-    height: 95%;
-    object-fit: cover;
-    border-radius: 50%;
-    background-color: transparent;
-    mix-blend-mode: multiply;
-    filter: brightness(1.1) contrast(1.1);
+    width: auto;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 0;
+    margin-right: 15px;
 }
 
 .brand h1 {
@@ -497,7 +479,10 @@ ul {
     margin-bottom: 30px;
 }
 
-.footer-logo-wrapper {
+.footer-brand img {
+    width: auto;
+    height: 50px;
+    object-fit: contain;
     margin-bottom: 15px;
 }
 
@@ -553,36 +538,50 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .glass-header {
-        padding: 12px 0;
-    }
-    
     .glass-header .container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .logo-container {
         margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .logo {
+        width: auto;
+        height: 60px;
+        object-fit: contain;
+        border-radius: 0;
+        margin-right: 10px;
+    }
+    
+    .brand h1 {
+        font-size: 1.5rem;
+    }
+    
+    .brand p {
+        font-size: 0.8rem;
     }
     
     .appointment-info {
         text-align: center;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 5px;
     }
     
     .phone-number, .address {
         justify-content: center;
-        flex-wrap: wrap;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     
     .glass-nav ul {
         flex-wrap: wrap;
-        justify-content: center;
     }
     
     .glass-nav li {
@@ -608,6 +607,41 @@ ul {
     }
 }
 
+/* Further optimization for small mobile screens */
+@media (max-width: 480px) {
+    .glass-header {
+        padding: 10px 0;
+    }
+    
+    .logo-container {
+        margin-bottom: 5px;
+    }
+    
+    .logo {
+        width: auto;
+        height: 50px;
+        object-fit: contain;
+        border-radius: 0;
+    }
+    
+    .brand h1 {
+        font-size: 1.3rem;
+    }
+    
+    .brand p {
+        display: none; /* Hide the tagline on very small screens */
+    }
+    
+    .phone-number i, .address i {
+        font-size: 1rem;
+    }
+    
+    .phone-number, .address {
+        font-size: 0.8rem;
+        margin: 3px 0;
+    }
+}
+
 @media (max-width: 576px) {
     .section-title {
         font-size: 2rem;
@@ -615,88 +649,5 @@ ul {
     
     .doctor-card, .facility-card {
         margin-bottom: 20px;
-    }
-    
-    .glass-header {
-        padding: 10px 0;
-    }
-    
-    .logo-wrapper {
-        width: 40px;
-        height: 40px;
-        margin-right: 10px;
-    }
-    
-    .logo {
-        height: 100%;
-    }
-    
-    .brand h1 {
-        font-size: 1.4rem;
-    }
-    
-    .brand p {
-        font-size: 0.8rem;
-    }
-    
-    .appointment-info {
-        font-size: 0.9rem;
-    }
-    
-    .phone-number i, .address i {
-        font-size: 1rem;
-    }
-    
-    .address span {
-        width: 100%;
-        text-align: center;
-        margin-top: 3px;
-    }
-    
-    .glass-nav {
-        margin-top: 10px;
-    }
-    
-    .glass-nav ul {
-        padding: 8px 0;
-    }
-    
-    .glass-nav a {
-        padding: 6px 10px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .logo-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .logo-wrapper {
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
-    
-    .address {
-        display: none;
-    }
-    
-    .phone-number {
-        margin-bottom: 0;
-    }
-    
-    .glass-nav ul {
-        justify-content: space-around;
-        padding: 5px 0;
-    }
-    
-    .glass-nav li {
-        margin: 3px;
-    }
-    
-    .glass-nav a {
-        padding: 5px 8px;
-        font-size: 0.8rem;
     }
 } 
