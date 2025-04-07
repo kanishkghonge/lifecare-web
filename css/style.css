@@ -158,9 +158,8 @@ ul {
 
 .logo {
     width: auto;
-    height: 60px;
+    height: 80px;
     object-fit: contain;
-    border-radius: 0;
     margin-right: 15px;
 }
 
@@ -182,6 +181,7 @@ ul {
 .phone-number, .address {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     margin: 5px 0;
 }
 
@@ -539,15 +539,13 @@ ul {
 
 @media (max-width: 768px) {
     .glass-header .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     
     .logo-container {
         margin-bottom: 10px;
-        width: 100%;
-        display: flex;
         justify-content: center;
     }
     
@@ -555,7 +553,6 @@ ul {
         width: auto;
         height: 60px;
         object-fit: contain;
-        border-radius: 0;
         margin-right: 10px;
     }
     
@@ -570,9 +567,6 @@ ul {
     .appointment-info {
         text-align: center;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
     
     .phone-number, .address {
@@ -621,7 +615,6 @@ ul {
         width: auto;
         height: 50px;
         object-fit: contain;
-        border-radius: 0;
     }
     
     .brand h1 {
